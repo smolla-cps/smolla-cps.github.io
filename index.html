@@ -1,7 +1,542 @@
-<a href="mailto:smolla@miners.utep.edu">Email me ↗</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selim Molla | Computational Science Researcher</title>
+  <meta name="description" content="Selim Molla — PhD Candidate researching digital twins, intelligent manufacturing, healthcare systems, machine learning, reinforcement learning, optimization, and simulation.">
 
-<a href="https://github.com/smolla-cps">GitHub ↗</a>
+  <style>
+    :root {
+      --navy: #102a43;
+      --blue: #176b87;
+      --teal: #35a29f;
+      --cream: #f7f5ef;
+      --white: #ffffff;
+      --text: #263238;
+      --muted: #61707d;
+      --line: #dfe7e5;
+    }
 
-<a href="https://www.linkedin.com/in/selimmolla/">LinkedIn ↗</a>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-<a href="https://scholar.google.com/citations?user=ujaDDl0AAAAJ&hl=en&authuser=2">Google Scholar ↗</a>
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--cream);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 245, 239, 0.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-content {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    section {
+      padding: 92px 0;
+    }
+
+    .hero {
+      min-height: 86vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 88% 15%, #cbeee8 0, transparent 28%),
+        var(--cream);
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--blue);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 840px;
+      color: var(--navy);
+      font-size: clamp(2.7rem, 6vw, 5.5rem);
+      line-height: 1.04;
+      letter-spacing: -0.055em;
+      margin-bottom: 28px;
+    }
+
+    h1 em {
+      color: var(--blue);
+      font-family: Georgia, serif;
+      font-weight: 400;
+    }
+
+    .hero-description {
+      max-width: 690px;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 20px;
+      border: 1px solid var(--navy);
+      border-radius: 4px;
+      color: var(--white);
+      background: var(--navy);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .button.secondary {
+      color: var(--navy);
+      background: transparent;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      transition: 0.2s ease;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 80px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .focus-item {
+      min-height: 145px;
+      padding: 24px;
+      background: var(--white);
+    }
+
+    .number {
+      color: var(--teal);
+      display: block;
+      margin-bottom: 20px;
+      font-size: 0.83rem;
+      font-weight: 800;
+    }
+
+    .focus-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1.1rem;
+      line-height: 1.25;
+    }
+
+    .about {
+      background: var(--white);
+    }
+
+    h2 {
+      max-width: 800px;
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 30px;
+    }
+
+    .about-text {
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .projects {
+      background: var(--cream);
+    }
+
+    .project-list {
+      margin-top: 55px;
+      border-top: 1px solid var(--line);
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 25px;
+      padding: 42px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-number {
+      color: var(--teal);
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+
+    .project-category {
+      color: var(--blue);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      color: var(--navy);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      line-height: 1.2;
+      margin: 10px 0 14px;
+    }
+
+    .project p {
+      max-width: 750px;
+      color: var(--muted);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--navy);
+      background: var(--white);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .skills {
+      background: var(--white);
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .skill-card {
+      padding: 28px;
+      border-top: 4px solid var(--teal);
+      background: var(--cream);
+    }
+
+    .skill-card h3 {
+      margin-bottom: 16px;
+      font-size: 1.2rem;
+    }
+
+    .skill-card ul {
+      padding-left: 18px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact {
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .contact h2 {
+      color: var(--white);
+    }
+
+    .contact p {
+      max-width: 640px;
+      color: #d7e2e7;
+      font-size: 1.1rem;
+    }
+
+    .contact .button {
+      color: var(--navy);
+      border-color: var(--white);
+      background: var(--white);
+    }
+
+    .contact .button.secondary {
+      color: var(--white);
+      background: transparent;
+    }
+
+    footer {
+      padding: 24px 0;
+      color: #c2d1d9;
+      background: #091f33;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 720px) {
+      .nav-content {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .focus-grid,
+      .skill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 100px 0 70px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="container nav-content">
+      <a class="logo" href="#home">SM.</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <p class="eyebrow">PhD Candidate · Computational Science</p>
+        <h1>Building intelligent systems for complex <em>real-world</em> operations.</h1>
+        <p class="hero-description">
+          I am Selim Molla, a researcher focused on machine learning, deep learning,
+          reinforcement learning, optimization, and discrete-event simulation for
+          manufacturing and healthcare systems.
+        </p>
+
+        <div class="buttons">
+          <a class="button" href="#projects">Explore my work ↓</a>
+          <a class="button secondary" href="#contact">Get in touch</a>
+        </div>
+
+        <div class="focus-grid">
+          <div class="focus-item"><span class="number">01</span><strong>Machine<br>Learning</strong></div>
+          <div class="focus-item"><span class="number">02</span><strong>Deep<br>Learning</strong></div>
+          <div class="focus-item"><span class="number">03</span><strong>Reinforcement<br>Learning</strong></div>
+          <div class="focus-item"><span class="number">04</span><strong>Optimization &<br>Simulation</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+        <p class="eyebrow">About me</p>
+        <h2>Research that connects data, decisions, and operational performance.</h2>
+        <div class="about-text">
+          <p>
+            I am a PhD Candidate in Computational Science at The University of Texas
+            at El Paso and a Graduate Research Assistant in Industrial, Manufacturing,
+            and Systems Engineering.
+          </p>
+          <p>
+            My work combines data-driven methods and simulation to improve resource
+            allocation, material handling, manufacturing flow, and system-level
+            decision making under uncertainty.
+          </p>
+        </div>
+        <div class="buttons">
+          <a class="button secondary" href="#contact">Request my CV ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <p class="eyebrow">Selected work</p>
+        <h2>Research projects</h2>
+
+        <div class="project-list">
+          <article class="project">
+            <div class="project-number">01</div>
+            <div>
+              <div class="project-category">Reinforcement Learning · FlexSim</div>
+              <h3>Congestion-aware OHT dispatching for semiconductor mini-fabs</h3>
+              <p>
+                Developing a reinforcement learning environment that selects fleet
+                size and dispatching policy to fulfill time-sensitive transport
+                orders while minimizing congestion and blocked time.
+              </p>
+              <div class="tags">
+                <span class="tag">FlexSim</span>
+                <span class="tag">Python</span>
+                <span class="tag">Gymnasium</span>
+                <span class="tag">PPO</span>
+                <span class="tag">AGV/OHT Systems</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-number">02</div>
+            <div>
+              <div class="project-category">Simulation Optimization · Manufacturing</div>
+              <h3>Mixed-model assembly line balancing and workforce sizing</h3>
+              <p>
+                A simulation-guided framework for determining practical staffing
+                levels in mixed-model, multi-manned assembly lines with stochastic
+                processing and sequence-dependent setup times.
+              </p>
+              <div class="tags">
+                <span class="tag">Discrete-Event Simulation</span>
+                <span class="tag">Optimization</span>
+                <span class="tag">Workforce Planning</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-number">03</div>
+            <div>
+              <div class="project-category">Deep Learning · Forecasting</div>
+              <h3>Wind energy forecasting for Texas</h3>
+              <p>
+                Evaluated LSTM, SARIMA, and foundation-model approaches for
+                forecasting Texas wind energy generation using multi-year
+                time-series data.
+              </p>
+              <div class="tags">
+                <span class="tag">LSTM</span>
+                <span class="tag">Time Series</span>
+                <span class="tag">Python</span>
+                <span class="tag">Model Evaluation</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <div class="container">
+        <p class="eyebrow">Toolbox</p>
+        <h2>Methods and technologies</h2>
+
+        <div class="skill-grid">
+          <div class="skill-card">
+            <h3>AI & Analytics</h3>
+            <ul>
+              <li>Machine Learning</li>
+              <li>Deep Learning</li>
+              <li>Reinforcement Learning</li>
+              <li>Time-Series Forecasting</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h3>Modeling & Decisions</h3>
+            <ul>
+              <li>Discrete-Event Simulation</li>
+              <li>Simulation Optimization</li>
+              <li>Assembly Line Balancing</li>
+              <li>Resource Allocation</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h3>Tools</h3>
+            <ul>
+              <li>Python</li>
+              <li>FlexSim</li>
+              <li>Stable-Baselines3</li>
+              <li>Gymnasium</li>
+              <li>Git & GitHub</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <p class="eyebrow">Let’s connect</p>
+        <h2>Interested in collaborating on an intelligent operations problem?</h2>
+        <p>
+          For research collaboration, projects, or opportunities, please reach out.
+        </p>
+
+        <div class="buttons">
+          <a class="button" href="mailto:smolla@miners.utep.edu">Email me ↗</a>
+          <a class="button secondary" href="https://github.com/smolla-cps" target="_blank">GitHub ↗</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/selimmolla/" target="_blank">LinkedIn ↗</a>
+          <a class="button secondary" href="https://scholar.google.com/citations?user=ujAD10AAAAAJ&hl=en&authuser=2" target="_blank">Google Scholar ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Selim Molla. Built with purpose.</div>
+  </footer>
+</body>
+</html>
